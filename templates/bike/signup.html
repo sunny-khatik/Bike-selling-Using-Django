@@ -1,0 +1,36 @@
+
+{#{% extends "blogs/base.html" %}#}
+
+{% load bootstrap4 %}
+{% bootstrap_css %}
+{% bootstrap_javascript jquery='full' %}
+
+<title>{% block title %}SignUp to BikeVale{% endblock %}</title>
+
+<style>
+    .full-height {
+        height: 100%;
+      }
+</style>
+
+<div class="full-height" style="background-color:grey">
+    {% bootstrap_messages %}
+    <div class="row">
+        <div class="col-lg-6 offset-lg-3 col-sm-10 offset-sm-1">
+            <div class="card my-5">
+                <div class="card-header text-center text-white" style="background-color:rgb(51, 50, 50);">
+                   <h4> Sign Up to BikeVale Shop</h4>
+                </div>
+                <div class="card-body">
+                    <form action="" method="post">
+                        {% csrf_token %}
+                        {% bootstrap_form form %}
+                    {#    {{ form.as_p }}#}
+                        <input type="submit" class="btn btn-dark text-center w-100 mb-3" value="Sign Up">
+                        <a href="/" class="float-left">Home</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
